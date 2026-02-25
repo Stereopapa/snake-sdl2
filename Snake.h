@@ -1,8 +1,5 @@
 #pragma once
-extern "C" {
-#include"./SDL2-2.0.10/include/SDL.h"
-#include"./SDL2-2.0.10/include/SDL_main.h"
-}
+#include <SDL.h>
 #include "List.h"
 #include "Board.h"
 #include "Timer.h"

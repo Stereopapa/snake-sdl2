@@ -3,10 +3,7 @@
 #include "Info.h"
 #include "Board.h"
 #include "Snake.h"
-extern "C" {
-#include"./SDL2-2.0.10/include/SDL.h"
-#include"./SDL2-2.0.10/include/SDL_main.h"
-}
+#include <SDL.h>
 
 #define TIME_TO_SPEEDUP 10
 

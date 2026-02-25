@@ -1,8 +1,5 @@
 #include "Timer.h"
-extern "C" {
-#include"./SDL2-2.0.10/include/SDL.h"
-#include"./SDL2-2.0.10/include/SDL_main.h"
-}
+#include <SDL.h>
 #include <random>
 
 #define SPEEDUP_AMMOUNT 0.8

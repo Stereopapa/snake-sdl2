@@ -4,7 +4,7 @@
 #define POINT_HEIGHT 10
 #define POINT_COLLIDER_WIDTH 30
 #define POINT_COLLIDER_HEIGHT 30
-#define BMP_POINT_IMAGE_FILE_PATH "./bl.bmp"
+#define BMP_POINT_IMAGE_FILE_PATH "./assets/bl.bmp"
 
 Point::Point(SDL_Renderer* renderTarget, const char * filename){
 	texSrc.w = POINT_WIDTH;

@@ -1,6 +1,7 @@
 #include "Info.h"
 #include <string.h>
 #include <stdio.h>
+#include "AssetsPaths.h"
 
 Info::Info(SDL_Renderer* renderTarget, int x, int y, int width,
 	int height)
@@ -12,7 +13,7 @@ Info::Info(SDL_Renderer* renderTarget, int x, int y, int width,
 	strcpy(this->infoControlText, infoControlText);
 	textSurface = SDL_CreateRGBSurface(0, width, height, 32,
 		0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
-	charset = SDL_LoadBMP("./cs8x8.bmp");
+	charset = SDL_LoadBMP(Assets::CHARSET_PATH);
 	SDL_SetColorKey(charset, true, 0x000000);//white text
 	updateTexture(renderTarget, 0, 0, 0);
 	switchEndGameInfo(false);
@@ -34,7 +35,7 @@ void Info::updateTexture(SDL_Renderer* renderTarget, double fps, double worldTim
 	infoField = SDL_CreateTextureFromSurface(renderTarget, textSurface);
 }
 void Info::updateTimerInfo(double fps, double worldTime, int points) {
-	sprintf(infoTimerText, "Requriments done (Mandatory, A, B, C, D) punkty = %d czas trwania = % .1lf s % .0lf klatek / s",points, worldTime, fps);
+	sprintf(infoTimerText, "points = %d game duration = % .1lf s % .0lf fps",points, worldTime, fps);
 }
 void Info::putStringInSurface(int x, int y, const char* text) {
 	int px, py, c;	
@@ -62,7 +63,7 @@ void Info::draw(SDL_Renderer* renderTarget, int fps, int worldTime, int points) 
 }
 
 void Info::switchEndGameInfo(bool setValue) {
-	if (!setValue) strcpy(infoControlText, "Esc wyjscie, \030 move up, \031  move down, \032 move left, \033  move right");
-	else strcpy(infoControlText, "Esc - wyjscie, N - new Game");
+	if (!setValue) strcpy(infoControlText, "Esc exit, \030 move up, \031  move down, \032 move left, \033  move right");
+	else strcpy(infoControlText, "Esc - exit, N - new Game");
 }
 

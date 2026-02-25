@@ -362,11 +362,9 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-# SDL not ignore
-!SDL2-2.0.10/
-!SDL2-2.0.10/lib/
-!SDL2-2.0.10/lib/x64/
-!SDL2-2.0.10/lib/x64/*.lib
-!SDL2-2.0.10/include/
-!SDL2-2.0.10/include/*.h
-!*.dll
+# Depenecies not ignore
+!dependencies/**/
+
+!depenencies/**/*.lib
+!depenencies/**/*.dll
+!depenencies/**/*.h

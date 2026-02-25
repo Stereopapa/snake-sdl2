@@ -1,16 +1,18 @@
 #include "Board.h"
 #include <stdio.h>
 #include <string.h>
+#include "AssetsPaths.h"
 
 #define PROGGRES_BAR_SCALE 20
+
 
 Board::Board(SDL_Renderer* renderTarget, int x, int y, int width, int height){
 	border.x = x;
 	border.y = y;
 	border.w = width;
 	border.h = height;
-	bluePoint = new Point(renderTarget, "./bl.bmp");
-	redPoint = new Point(renderTarget, "./redDot.bmp");
+	bluePoint = new Point(renderTarget, Assets::BLUE_DOT_PATH);
+	redPoint = new Point(renderTarget, Assets::RED_DOT_PATH);
 	bluePoint->respawn(border);
 	redDotBar = new ProgressBar(PROGGRES_BAR_SCALE, RED_DOT_ACTIVE_TIME, x + 2, y - 50);
 }
